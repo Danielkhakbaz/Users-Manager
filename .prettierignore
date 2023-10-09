@@ -34,3 +34,9 @@ next-env.d.ts
 
 # husky
 .husky
+
+# vscode
+.vscode
+
+# eslint
+.eslintignore
