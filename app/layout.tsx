@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ReactQueryProvider } from "app/ReactQuery-Provider";
 import Navbar from "layout/navbar/navbar";
 import "styles/globals.css";
 
@@ -19,10 +18,8 @@ export default async function RootLayout({ children }: Props) {
   return (
     <html lang="en" data-theme="light">
       <body>
-        <ReactQueryProvider>
-          <Navbar />
-          {children}
-        </ReactQueryProvider>
+        <Navbar />
+        {children}
       </body>
     </html>
   );
