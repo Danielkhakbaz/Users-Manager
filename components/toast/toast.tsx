@@ -1,6 +1,6 @@
 type ToastProps = {
-  toastState: string;
-  toastMessage: string;
+  toastState: string | null;
+  toastMessage: string | null;
 };
 
 const Toast = ({ toastState, toastMessage }: ToastProps) => {

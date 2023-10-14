@@ -12,8 +12,8 @@ type User = {
 };
 
 const AddModal = () => {
-  const [toastState, setToastState] = useState("");
-  const [toastMessage, setToastMessage] = useState("");
+  const [toastState, setToastState] = useState<string | null>("");
+  const [toastMessage, setToastMessage] = useState<string | null>("");
   const [newUser, setNewUser] = useState<User>({
     name: "",
     email: "",
@@ -34,6 +34,12 @@ const AddModal = () => {
       .catch((error) => {
         setToastState("error");
         setToastMessage(JSON.stringify(error, null, 2));
+      })
+      .finally(() => {
+        setTimeout(() => {
+          setToastState(null);
+          setToastMessage(null);
+        }, 1500);
       });
   };
 

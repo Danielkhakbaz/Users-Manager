@@ -17,8 +17,8 @@ type Props = {
 };
 
 const DeleteModal = ({ user, index }: Props) => {
-  const [toastState, setToastState] = useState("");
-  const [toastMessage, setToastMessage] = useState("");
+  const [toastState, setToastState] = useState<string | null>("");
+  const [toastMessage, setToastMessage] = useState<string | null>("");
 
   const router = useRouter();
 

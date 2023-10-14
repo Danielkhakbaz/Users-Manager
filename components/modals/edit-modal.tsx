@@ -21,8 +21,8 @@ const EditModal = ({
   user: { id, name, email, followers, isActive, size },
   index,
 }: Props) => {
-  const [toastState, setToastState] = useState("");
-  const [toastMessage, setToastMessage] = useState("");
+  const [toastState, setToastState] = useState<string | null>("");
+  const [toastMessage, setToastMessage] = useState<string | null>("");
   const [data, setData] = useState({
     id,
     name,
@@ -39,7 +39,7 @@ const EditModal = ({
       .put("http://localhost:3000/api/users/", data)
       .then(() => {
         setToastState("success");
-        setToastMessage("User has been successfully edited!");
+        setToastMessage("User has been successfully updated!");
 
         router.refresh();
       })
